@@ -36,7 +36,7 @@ class AMIS30543:
         self.spi.mode = 0
         self.spi.lsbfirst = False                               # Serial data transfer is assumed to follow MSB first rule.
 
-        # Decalre the addresses of control and status registers. Table 11 AMIS30543-datasheet
+        # addresses of control and status registers. Table 11 AMIS30543-datasheet
         self.REG = {'WR':  0x00,
                     'CR0': 0x01,
                     'CR1': 0x02,
@@ -93,7 +93,7 @@ class AMIS30543:
         self.spi.close()
     
     def transfer(self, byteVal):
-        receivedVal = self.spi.xfer2(byteVal)  # data from slave (if any) in response to transferring byteVal saved in receivedVal
+        receivedVal = self.spi.xfer2(byteVal)  # data from slave (if any) in response to transferring byteVal is saved in receivedVal
 
     def setCurrentMilliamps(self, current):
         CUR_reg = 0
@@ -114,8 +114,10 @@ class AMIS30543:
         return (1 << numbits) - 1 - n
     
     def setStepMode(self, mode):
-        # By default, the mode is 32. 
+        # set the desired number of microsteps 
+        # default mode is 32 microsteps
         # See Table 12 of the AMIS-30543 datasheet
+        # as more possible values were not covered
         esm = 0b000
         sm = 0b000
         if mode == 64:
