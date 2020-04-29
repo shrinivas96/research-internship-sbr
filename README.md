@@ -6,22 +6,24 @@ The student participators in this project were:
 
 Harish Gopal  
 swamin01@ads.uni-passau.de
-  
+
 Ram Prasanth  
 udhaya01@ads.uni-passau.de
-  
+
 Rutvik Bhatt  
 bhatt02@ads.uni-passau.de
-  
+
 Shrinivas Iyengar  
 iyenga01@ads.uni-passau.de
 
 ### Getting started
 Linear Quadratic Regulator (LQR) is implemented to control the linearized dynamic system. Kalman filter is used for state estimation.
-This repository contains the Python, MATLAB and Simulink files for this project. The mathematical model and LQR controller were tested on MATLAB and Simulink. The final code was implemented in Python on a Raspberry Pi. 
+This repository contains the Python, MATLAB and Simulink files for this project. The mathematical model and the LQR controller were tested on MATLAB and Simulink. The final code was implemented in Python on a Raspberry Pi.
+
+The 
 
 ### Main robot code
 Here, we describe what runs the "self-balancing" part of the robot. 
 this file depends on many files which will also be described shortyly
-The [main code](/sb_robot_integrated.py)
+The [main code](/sb_robot_integrated.py) 
 sb_robot_integrated.py 
