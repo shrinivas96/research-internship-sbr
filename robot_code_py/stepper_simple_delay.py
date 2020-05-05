@@ -23,11 +23,11 @@ sleep(1)  # Giving the driver some time to power up.
 
 stepper1.reset_settings()  # possibly redundant to call the function here. apply the settings when constructor is called
 
-maxCurrent = 1800
+maxCurrent = 1800 # this is the max current that the motor is rated for. 
 stepper1.setCurrentMilliamps(maxCurrent)
 
 total_steps = 200  # number of steps for the motor to complete one revolution. found by 360/step_angle
-micro_steps = 16  #
+micro_steps = 16  # we choose to set the step mode at 16.
 stepper1.setStepMode(micro_steps)
 stepper1.enableDriver()
 
