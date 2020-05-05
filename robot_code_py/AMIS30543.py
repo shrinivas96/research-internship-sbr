@@ -1,5 +1,5 @@
 """
-AMIS 30543 has an SPI interface. This python file is inspired from the 
+AMIS 30543 has an SPI interface. This file is inspired from the 
 documentation of POLOLU AMIS 30543:
 https://pololu.github.io/amis-30543-arduino/
 and
@@ -93,7 +93,8 @@ class AMIS30543:
         self.spi.close()
     
     def transfer(self, byteVal):
-        receivedVal = self.spi.xfer2(byteVal)  # data from slave (if any) in response to transferring byteVal is saved in receivedVal
+        # data from slave (if any) in response to transferring byteVal is saved in receivedVal. can be used for debugging.
+        receivedVal = self.spi.xfer2(byteVal)  
 
     def setCurrentMilliamps(self, current):
         CUR_reg = 0
