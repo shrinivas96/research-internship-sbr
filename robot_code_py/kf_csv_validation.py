@@ -6,7 +6,7 @@ import kalman_filter as kf
 deg2rad = np.pi / 180
 rad2deg = 1 / deg2rad
 
-input_df = pd.read_csv('example1.csv')
+input_df = pd.read_csv('kf_data_validation.csv')
 df_len = len(input_df)
 # input_data_df = input_df.drop(['Time (sec)', 'Voltage (V)', 'Gyro45(deg/sec)', 'Theta (deg)'], axis=1)
 
