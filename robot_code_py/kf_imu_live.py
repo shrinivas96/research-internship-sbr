@@ -3,9 +3,9 @@ from mpu6050 import *
 import kalman_filter as kf
 
 """
-bug?: trying to print the estimated values in the while loop causes the entire
+bug: trying to print the estimated values in the while loop causes the entire
 program and raspberry pi to hang. adding a count variable 'c' and then printing 
-only after every 100 iteration seems to work for now. no idea why
+only after every 100 iteration seems to work for now. no idea why!
 
 possible reason: reading a new value and estimating values takes much less time 
 than executing a print statement.
@@ -35,7 +35,7 @@ while True:
     Az = acc_z / 16384.0
     Gx = gyro_x / 131.0
 
-    y_theta = np.arctan2(Az, Ay)                                            # y_theta = -(-Az/Ay). output in radians
+    y_theta = np.arctan2(Az, Ay)                                            # y_theta = -(-Az/Ay), because of imu placement. output in radians
     yw = Gx * deg2rad                                                       # convert to rad/sec as input in deg/sec
 
     mu, P = kf.time_update_kf(mu, P)                                        # prediction based on process model
